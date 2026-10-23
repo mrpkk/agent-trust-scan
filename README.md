@@ -69,7 +69,7 @@ $ agent-trust-scan scan examples/vulnerable-agent
 ...
 ```
 
-See [`docs/SAMPLE-REPORT.md`](docs/SAMPLE-REPORT.md) for a full report against an intentionally vulnerable example, and [`docs/FIELD-NOTES.md`](docs/FIELD-NOTES.md) for aggregate notes from three public x402/agent repos.
+See [`docs/SAMPLE-REPORT.md`](docs/SAMPLE-REPORT.md) for a full report against an intentionally vulnerable example, [`docs/FIELD-NOTES.md`](docs/FIELD-NOTES.md) for aggregate notes from three public x402/agent repos, and [`docs/X402-UPTO-RISKS.md`](docs/X402-UPTO-RISKS.md) for the `upto` settlement checks.
 
 ## Free scan
 
