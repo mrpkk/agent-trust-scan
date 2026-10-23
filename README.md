@@ -1,6 +1,13 @@
 # agent-trust-scan
 
+[![tests](https://github.com/mrpkk/agent-trust-scan/actions/workflows/test.yml/badge.svg)](https://github.com/mrpkk/agent-trust-scan/actions/workflows/test.yml)
+[![license](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
+
 Static security scan for **AI agents with wallets**.
+
+**Landing page:** <https://mrpkk.github.io/agent-trust-scan/>  
+**Free scan request:** <https://github.com/mrpkk/agent-trust-scan/issues/new?template=scan-request.yml>
 
 It looks for the failure modes that turn a helpful agent into a drain:
 

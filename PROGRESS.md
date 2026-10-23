@@ -29,16 +29,16 @@
 
 **Результат:** публичный CLI, который находит 12 классов рисков в агенте с кошельком и выдаёт отчёт.
 
-- [ ] Каркас пакета, `pyproject.toml`, лицензия Apache-2.0.
-- [ ] 12 правил: секреты, `.env`, unlimited approve, x402 testnet/disabled/price floor/no receipt, отсутствие лимитов/kill switch/human approval/audit log, eval/exec/pickle/shell.
-- [ ] Redaction: отчёт не содержит полных ключей.
-- [ ] Markdown/JSON отчёт, score 0–100, exit code для CI.
-- [ ] Тесты: 8+ сценариев, зелёный pytest.
-- [ ] Прогон на собственных `agentpay`, `drift`, `attest`, KARTA; sample report.
-- [ ] README с границами: это статическая эвристика, не заменяет аудит.
-- [ ] CI GitHub Actions на Python 3.12.
-- [ ] Публичный репозиторий `mrpkk/agent-trust-scan`, темы `ai-agents`, `security`, `x402`.
-- [ ] GitHub Pages с оффером и формой заявки через issue template.
+- [x] Каркас пакета, `pyproject.toml`, лицензия Apache-2.0.
+- [x] 12 правил: секреты, `.env`, unlimited approve, x402 testnet/disabled/price floor/no receipt, отсутствие лимитов/kill switch/human approval/audit log, eval/exec/pickle/shell.
+- [x] Redaction: отчёт не содержит полных ключей.
+- [x] Markdown/JSON отчёт, score 0–100, exit code для CI.
+- [x] Тесты: 8+ сценариев, зелёный pytest.
+- [x] Прогон на собственных `agentpay`, `drift`, `attest`, KARTA; sample report.
+- [x] README с границами: это статическая эвристика, не заменяет аудит.
+- [x] CI GitHub Actions на Python 3.12.
+- [x] Публичный репозиторий `mrpkk/agent-trust-scan`, темы `ai-agents`, `security`, `x402`.
+- [x] GitHub Pages с оффером и формой заявки через issue template.
 
 **Критерий:** `pytest -q` зелёный; `agent-trust-scan scan .` работает; репозиторий и Pages доступны.
 
@@ -46,13 +46,13 @@
 
 ## P2 — Оффер и лендинг (в работе)
 
-- [ ] H1: «Your agent has a wallet. Can a prompt injection empty it?»
-- [ ] 4 карточки: Free Scan, Security Review $2 500, Payable Sprint $3 500, Bundle $5 500.
-- [ ] Как работает: заявка → скан 48 ч → отчёт → фикс.
-- [ ] CTA: GitHub issue `scan-request`.
-- [ ] Без фейковых отзывов; честно: «static scan + manual review».
-- [ ] `.nojekyll`, meta, mobile.
-- [ ] Проверка Pages через curl.
+- [x] H1: «Your agent has a wallet. Can a prompt injection empty it?»
+- [x] 4 карточки: Free Scan, Security Review $2 500, Payable Sprint $3 500, Bundle $5 500.
+- [x] Как работает: заявка → скан 48 ч → отчёт → фикс.
+- [x] CTA: GitHub issue `scan-request`.
+- [x] Без фейковых отзывов; честно: «static scan + manual review».
+- [x] `.nojekyll`, meta, mobile.
+- [x] Проверка Pages через curl.
 
 **Критерий:** страница открывается, форма issue доступна, оффер читается за 30 секунд.
 
@@ -60,10 +60,10 @@
 
 ## P3 — Доказательство (в работе)
 
-- [ ] Sample report по нашему стеку (redacted).
-- [ ] Короткий teardown: «5 controls that stop a $174k prompt-injection drain».
-- [ ] README-бейджи: tests, license, Python.
-- [ ] Ссылка на sample report с лендинга.
+- [x] Sample report по нашему стеку (redacted).
+- [x] Короткий teardown: «5 controls that stop a $174k prompt-injection drain».
+- [x] README-бейджи: tests, license, Python.
+- [x] Ссылка на sample report с лендинга.
 
 **Критерий:** есть публичный отчёт и текст, которые можно отправить клиенту.
 
@@ -71,10 +71,10 @@
 
 ## P4 — Список целей (в работе)
 
-- [ ] 50 целей: x402-продавцы, AI-агенты с кошельками, DAO, MCP-платежи.
-- [ ] Для каждой: URL, почему подходит, канал контакта, статус.
-- [ ] Не публиковать персональные данные; только публичные профили/репозитории.
-- [ ] `outreach/targets.csv` — локально, в `.gitignore`.
+- [x] 50 целей: x402-продавцы, AI-агенты с кошельками, DAO, MCP-платежи.
+- [x] Для каждой: URL, почему подходит, канал контакта, статус.
+- [x] Не публиковать персональные данные; только публичные профили/репозитории.
+- [x] `outreach/targets.csv` — локально, в `.gitignore`.
 
 **Критерий:** 50 строк, у 30+ есть публичный канал (GitHub issue/X/сайт).
 
@@ -82,11 +82,11 @@
 
 ## P5 — Outreach kit (в работе)
 
-- [ ] 3 сообщения: x402-продавец, AI-агент стартап, DAO/фонд.
-- [ ] Follow-up через 3 и 7 дней.
-- [ ] Скрипт звонка 6 вопросов.
-- [ ] Таблица статусов: sent/replied/scan/paid.
-- [ ] Правило: 20–30 адресных сообщений/день, без спама, только публичные каналы.
+- [x] 3 сообщения: x402-продавец, AI-агент стартап, DAO/фонд.
+- [x] Follow-up через 3 и 7 дней.
+- [x] Скрипт звонка 6 вопросов.
+- [x] Таблица статусов: sent/replied/scan/paid.
+- [x] Правило: 20–30 адресных сообщений/день, без спама, только публичные каналы.
 
 **Критерий:** можно начинать рассылку без дописывания текстов.
 
@@ -134,3 +134,17 @@
 ## Журнал
 
 - **24.10.2026** — стратегия 2.0, аудит оплаты, старт сканера.
+
+
+---
+
+## Артефакты 24.10.2026
+
+- Код: https://github.com/mrpkk/agent-trust-scan
+- Лендинг: https://mrpkk.github.io/agent-trust-scan/
+- Sample report: https://github.com/mrpkk/agent-trust-scan/blob/main/docs/SAMPLE-REPORT.md
+- Teardown: https://github.com/mrpkk/agent-trust-scan/blob/main/docs/TEARDOWN.md
+- Free scan form: https://github.com/mrpkk/agent-trust-scan/issues/new?template=scan-request.yml
+- 50 целей: `outreach/targets.csv` (локально, не публикуется)
+- 12 тестов: `python3 -m pytest -q` — зелёные.
+- CI: `.github/workflows/test.yml` (после фикса установки pytest).
