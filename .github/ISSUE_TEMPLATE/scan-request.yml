@@ -1,0 +1,64 @@
+name: Free agent wallet scan
+description: Request a free 10-point static scan of an AI agent with a wallet or payment flow.
+title: "[scan] "
+labels: ["scan-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not paste private keys, seed phrases, API tokens, or customer data.**
+        A public repo or a short description is enough for the first scan.
+  - type: input
+    id: project
+    attributes:
+      label: Project or repo URL
+      description: GitHub/GitLab link, docs, or a public product page.
+      placeholder: https://github.com/org/agent
+    validations:
+      required: true
+  - type: textarea
+    id: money_flow
+    attributes:
+      label: What does the agent do with money?
+      description: Payments, swaps, treasury, x402/USDC, approvals, who can sign, limits.
+      placeholder: The agent pays for API calls in USDC on Base. A hot wallet signs. No daily limit yet.
+    validations:
+      required: true
+  - type: dropdown
+    id: rail
+    attributes:
+      label: Payment rail
+      options:
+        - Base / USDC
+        - Solana
+        - x402
+        - Both / multiple
+        - Other
+        - Not sure yet
+    validations:
+      required: true
+  - type: dropdown
+    id: visibility
+    attributes:
+      label: Repo visibility
+      options:
+        - Public repo
+        - Private repo (describe only)
+        - No repo yet
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (optional)
+      description: GitHub handle, X handle, or email. Public channels only.
+      placeholder: "@handle"
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - label: I have permission to share this repo or description.
+          required: true
+        - label: I understand the free scan is a static heuristic, not a guarantee or a full audit.
+          required: true

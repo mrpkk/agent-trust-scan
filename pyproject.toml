@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-trust-scan"
+version = "0.1.0"
+description = "Static security scan for AI agents with wallets: secrets, approvals, x402, limits, kill switch, audit log."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "mrpkk" }]
+keywords = ["ai-agents", "security", "x402", "web3", "static-analysis"]
+dependencies = []
+
+[project.scripts]
+agent-trust-scan = "agent_trust_scan.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mrpkk/agent-trust-scan"
+Issues = "https://github.com/mrpkk/agent-trust-scan/issues"
+
+[tool.setuptools.packages.find]
+include = ["agent_trust_scan*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

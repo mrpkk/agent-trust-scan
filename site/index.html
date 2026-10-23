@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Trust Scan — security for AI agents with wallets</title>
+<meta name="description" content="Free 10-point security scan for AI agents with wallets: prompt injection, spend limits, x402/USDC, kill switch, audit log.">
+<style>
+  :root{
+    --bg:#0b0f12; --panel:#11181d; --panel2:#0e1418; --ink:#e8f0ec;
+    --muted:#93a39b; --line:#233038; --mint:#7ee2b8; --amber:#f2c46d;
+    --red:#ff7a7a; --max:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:
+    radial-gradient(900px 500px at 80% -10%, rgba(126,226,184,.12), transparent 60%),
+    radial-gradient(700px 400px at 10% 10%, rgba(242,196,109,.08), transparent 55%),
+    var(--bg);
+    color:var(--ink);font:16px/1.6 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  a{color:var(--mint);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:10;background:rgba(11,15,18,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+  .mark{width:28px;height:28px;border:1px solid var(--mint);border-radius:8px;display:grid;place-items:center;color:var(--mint);font-size:13px}
+  .navlinks{display:flex;gap:18px;align-items:center;font-size:14px;color:var(--muted)}
+  .navlinks a{color:var(--muted)}
+  .navlinks a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:10px;border:1px solid var(--line);
+    background:var(--panel);color:var(--ink);font-weight:600;font-size:14px;text-decoration:none}
+  .btn:hover{border-color:var(--mint);text-decoration:none}
+  .btn.primary{background:var(--mint);color:#062016;border-color:var(--mint)}
+  .btn.primary:hover{filter:brightness(1.05)}
+  .hero{padding:88px 0 56px;border-bottom:1px solid var(--line)}
+  .kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;
+    color:var(--muted);font-size:12px;letter-spacing:.4px;text-transform:uppercase}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
+  h1{font-size:clamp(34px,6vw,64px);line-height:1.03;letter-spacing:-.03em;margin:20px 0 18px;max-width:900px}
+  h1 em{font-style:normal;color:var(--mint)}
+  .lede{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:760px;margin:0 0 28px}
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .micro{margin-top:16px;color:var(--muted);font-size:13px}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(24px,3.4vw,36px);letter-spacing:-.02em;margin:0 0 12px}
+  .sub{color:var(--muted);max-width:760px;margin:0 0 28px}
+  .grid{display:grid;gap:14px}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .stat{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:18px}
+  .stat b{display:block;font-size:26px;letter-spacing:-.02em;color:var(--ink)}
+  .stat span{color:var(--muted);font-size:12px;line-height:1.4;display:block;margin-top:6px}
+  .two{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:start}
+  .panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:22px}
+  .panel h3{margin:0 0 10px;font-size:18px}
+  .panel p{margin:0;color:var(--muted)}
+  ul.checks{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+  ul.checks li{position:relative;padding-left:22px;color:var(--muted);font-size:14px}
+  ul.checks li:before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;border:1px solid var(--mint);border-radius:3px;transform:rotate(45deg)}
+  .cards{grid-template-columns:repeat(4,1fr)}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+  .card.hot{border-color:rgba(126,226,184,.55);box-shadow:0 0 0 1px rgba(126,226,184,.12) inset}
+  .price{font-size:25px;letter-spacing:-.02em}
+  .price small{font-size:12px;color:var(--muted);letter-spacing:0}
+  .card p{color:var(--muted);font-size:14px;margin:0;flex:1}
+  .tag{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--amber)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .step{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel2)}
+  .step b{display:block;font-size:15px;margin-bottom:6px}
+  .step span{color:var(--muted);font-size:14px}
+  .code{background:#080c0f;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#cfe9dd}
+  .code .c{color:#6f847a}
+  .cta{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+  footer{padding:32px 0 56px;color:var(--muted);font-size:13px}
+  .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .fine{font-size:12px;color:#6f847a;max-width:780px}
+  @media (max-width:900px){
+    .stats,.cards,.steps{grid-template-columns:1fr 1fr}
+    .two{grid-template-columns:1fr}
+    .navlinks{display:none}
+  }
+  @media (max-width:560px){
+    .stats,.cards,.steps,ul.checks{grid-template-columns:1fr}
+    .hero{padding:56px 0 40px}
+    section{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="mark">AT</span> Agent Trust Scan</a>
+    <nav class="navlinks">
+      <a href="#checks">Checks</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how">How it works</a>
+      <a href="https://github.com/mrpkk/agent-trust-scan">GitHub</a>
+      <a class="btn primary" href="https://github.com/mrpkk/agent-trust-scan/issues/new?template=scan-request.yml">Free scan</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span> Open-source scanner · no custody</span>
+      <h1>Your agent has a wallet.<br>Can a prompt injection <em>empty it?</em></h1>
+      <p class="lede">We review AI agent payment flows: x402 and USDC, spend limits, prompt injection, kill switch, receipts. Get a free 10-point scan in 48 hours — before an attacker finds the gap.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/mrpkk/agent-trust-scan/issues/new?template=scan-request.yml">Request a free scan</a>
+        <a class="btn" href="https://github.com/mrpkk/agent-trust-scan/blob/main/docs/SAMPLE-REPORT.md">See a sample report</a>
+        <a class="btn" href="https://github.com/mrpkk/agent-trust-scan/blob/main/docs/TEARDOWN.md">Read the teardown</a>
+      </div>
+      <div class="micro">No wallet access required for the first scan. No custody. No payment processing for third parties.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="grid stats">
+        <div class="stat"><b>$174k</b><span>reported drained from an agent-linked wallet after a prompt injection (2026)</span></div>
+        <div class="stat"><b>$4.7M</b><span>average reported loss per AI-agent breach in a 2026 survey — verify for your context</span></div>
+        <div class="stat"><b>198.9M</b><span>x402 settlements since May 2025, ~$52.7M volume (TRM Labs, Sep 2026)</span></div>
+        <div class="stat"><b>0</b><span>keys or funds we hold. You keep custody.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="checks">
+    <div class="wrap">
+      <h2>What the free scan checks</h2>
+      <p class="sub">Static checks first, then a human review of the payment path. Findings are questions to verify, not a badge of safety.</p>
+      <div class="two">
+        <div class="panel">
+          <h3>10 points</h3>
+          <ul class="checks">
+            <li>Keys and hot wallets in config or prompts</li>
+            <li>Per-transaction and daily spend limits</li>
+            <li>What happens to tool output</li>
+            <li>Hidden instructions / prompt injection surface</li>
+            <li>Human approval for high-value actions</li>
+            <li>Kill switch that actually stops the agent</li>
+            <li>Append-only audit log and receipts</li>
+            <li>x402: price, payee, network, replay, receipt</li>
+            <li>Supply chain: MCP servers, npm/pip, updates</li>
+            <li>Incident plan: revoke, rotate, recover</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>What you get</h3>
+          <p>A 2-page report: score, top risks, file/line evidence, why it matters, and the fix. If there is nothing to fix, we say so. If the agent is not a fit, we say that too.</p>
+          <div style="height:14px"></div>
+          <pre class="code"><span class="c"># scan any repo</span>
+agent-trust-scan scan ./agent
+<span class="c"># score, findings, exit code for CI</span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Start free. Pay only for the fix.</h2>
+      <p class="sub">A service, not a subscription you forget. Prices in USD; payment in USDC on Base or Solana.</p>
+      <div class="grid cards">
+        <div class="card hot">
+          <span class="tag">Start here</span>
+          <div class="price">Free</div>
+          <b>10-point scan</b>
+          <p>48-hour report on one agent or repo. Top risks + fixes. No wallet access.</p>
+          <a class="btn" href="https://github.com/mrpkk/agent-trust-scan/issues/new?template=scan-request.yml">Request</a>
+        </div>
+        <div class="card">
+          <div class="price">$2,500</div>
+          <b>Security review</b>
+          <p>Threat model, live prompt-injection tests, wallet permissions, limits, kill switch, x402 flow, report + retest.</p>
+        </div>
+        <div class="card">
+          <div class="price">$3,500</div>
+          <b>Payable sprint</b>
+          <p>USDC/x402 pay-per-call, cost-based pricing, receipt check, docs, deploy on your infrastructure.</p>
+        </div>
+        <div class="card">
+          <div class="price">$5,500</div>
+          <b>Payable + Safe</b>
+          <p>Both, plus 30 days of support. The shortest path from “agent can pay” to “agent can be trusted with money”.</p>
+        </div>
+      </div>
+      <div class="micro">Retainer: $1,500/mo for monitoring, policy updates, monthly report, incident response.</div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="grid steps">
+        <div class="step"><b>1. Send the scope</b><span>Public repo or a short description of what the agent does with money. No keys needed.</span></div>
+        <div class="step"><b>2. Get the scan</b><span>Static scan + manual review in 48 hours. A 2-page report with severity and fixes.</span></div>
+        <div class="step"><b>3. Fix and retest</b><span>We fix with you or hand your team the patch list. Then we retest the exact findings.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap two">
+      <div>
+        <h2>Built on our own agent stack</h2>
+        <p class="sub">The scanner is open source. The review uses the same controls we built for our own agents: artifact verification, continuous mandate checks, spend limits, kill switch, append-only audit log.</p>
+        <a class="btn" href="https://github.com/mrpkk/agent-trust-scan">Inspect the code</a>
+      </div>
+      <div class="panel">
+        <h3>Honest limits</h3>
+        <p>This is not a smart-contract audit and not a guarantee. A static scan cannot prove that an agent is safe. It finds the obvious ways money leaves and the controls that are missing. A paid review adds live tests and a human threat model.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap cta">
+      <div>
+        <h2 style="margin-bottom:6px">Your agent can pay. Make sure it can stop.</h2>
+        <p class="sub" style="margin:0">Free scan, 48 hours. If it is not useful, you owe nothing.</p>
+      </div>
+      <a class="btn primary" href="https://github.com/mrpkk/agent-trust-scan/issues/new?template=scan-request.yml">Request a free scan</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Agent Trust Scan · <a href="https://github.com/mrpkk/agent-trust-scan">GitHub</a> · <a href="https://github.com/mrpkk/agent-trust-scan/blob/main/SECURITY.md">Security</a></div>
+    <div>No custody · no money transmission · you keep the keys</div>
+  </div>
+  <div class="wrap fine" style="margin-top:12px">
+    Figures are from public 2026 reports and incident write-ups; they are context, not a promise of your loss. The scanner is a heuristic tool; the paid review is scoped per engagement. This page is not legal, tax, or investment advice.
+  </div>
+</footer>
+</body>
+</html>
