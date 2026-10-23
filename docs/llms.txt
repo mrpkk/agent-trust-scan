@@ -1,0 +1,38 @@
+# Agent Trust Scan
+
+> Security reviews for AI agents with wallets. Free 10-point scan in 48 hours.
+
+## What it is
+
+A static scanner plus a human review for agents that can move money. It checks:
+private keys and API tokens in files, `.env` in the tree, unlimited token approvals,
+x402 testnet/disabled/price-below-cost/no-receipt, missing spend limits, kill switch,
+human approval, audit log, and eval/exec/pickle/shell on tool output.
+
+The scanner is open source: https://github.com/mrpkk/agent-trust-scan
+
+## Services
+
+- Free Agent Wallet Scan — 0 USD, 48 hours, 2-page report.
+- Agent Wallet Security Review — 2,500 USD, threat model, live prompt-injection tests,
+  wallet permissions, limits, kill switch, x402 flow, report and retest.
+- Payable Agent Sprint — 3,500 USD, USDC/x402 pay-per-call, cost-based pricing,
+  receipt check, docs, deploy on client infrastructure.
+- Payable + Safe — 5,500 USD, both plus 30 days of support.
+- Trust Retainer — 1,500 USD/month, monitoring, policy updates, monthly report,
+  incident response.
+- Small Contract Review — from 2,000 USD.
+
+Payment in USDC on Base or Solana. The client keeps custody; we do not hold funds
+or process payments for third parties.
+
+## Request a scan
+
+https://github.com/mrpkk/agent-trust-scan/issues/new?template=scan-request.yml
+
+Do not paste private keys, seed phrases, or customer data.
+
+## Limits
+
+Static scan is heuristic; it does not execute the agent or prove exploitability.
+A paid review adds live tests and a threat model. It is not a guarantee.
