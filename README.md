@@ -27,6 +27,15 @@ agent-trust-scan scan /path/to/agent --fail-on critical
 
 Exit code is `1` when a finding at or above `--fail-on` exists (default: `high`), so it can gate CI.
 
+Use it as a GitHub Action:
+
+```yaml
+- uses: mrpkk/agent-trust-scan@main
+  with:
+    path: .
+    fail-on: high
+```
+
 ## What it is not
 
 This is a **static, heuristic** scan. It does not execute the agent, call its tools, test prompt injection live, or prove exploitability. A missing keyword does not mean a control is absent — limits may live in a policy service or a database. A present keyword does not mean the control works. Every finding is a question to verify.

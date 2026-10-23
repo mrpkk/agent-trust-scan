@@ -1,0 +1,21 @@
+name: Agent Trust Scan
+description: Static security scan for AI agents with wallets.
+author: mrpkk
+inputs:
+  path:
+    description: File or directory to scan.
+    required: false
+    default: .
+  fail-on:
+    description: Exit 1 at or above this severity (none, low, medium, high, critical).
+    required: false
+    default: high
+runs:
+  using: composite
+  steps:
+    - name: Install scanner
+      shell: bash
+      run: python -m pip install --quiet "$GITHUB_ACTION_PATH"
+    - name: Scan
+      shell: bash
+      run: agent-trust-scan scan "${{ inputs.path }}" --fail-on "${{ inputs.fail-on }}"
