@@ -20,8 +20,13 @@ CODE_EXTS = {
 
 PAYMENT_MARKERS = (
     "send_transaction", "sendtransaction", "send_raw_transaction",
-    "transfer(", "approve(", "wallet.", "payto", "pay_to",
+    "transfer(", "approve(", "payto", "pay_to",
     "transferwithauthorization", "eth_sendtransaction",
+)
+
+PAYMENT_PATH_HINTS = (
+    "agent", "wallet", "payment", "pay", "x402", "signer", "treasury",
+    "transfer", "checkout", "billing", "invoice", "escrow", "spend",
 )
 
 LIMIT_MARKERS = (
@@ -152,6 +157,8 @@ def rule_dotenv(rel: str, text: str):
 
 
 def rule_unlimited_approve(rel: str, text: str):
+    if not is_code(rel):
+        return
     pattern = re.compile(
         r"(?i)(type\s*\(\s*uint256\s*\)\s*\.\s*max|2\s*\*\*\s*256\s*-\s*1|"
         r"maxUint256|MAX_UINT(?:256)?|approve\s*\([^)]{0,140}(?:max|2\s*\*\*\s*256))"
@@ -166,19 +173,20 @@ def rule_unlimited_approve(rel: str, text: str):
 
 
 def rule_x402_testnet(rel: str, text: str):
-    low = text.lower()
-    if "x402" not in low:
+    if "x402" not in text.lower():
         return
-    for marker in ("eip155:84532", "base-sepolia", "base_sepolia", "sepolia"):
-        idx = low.find(marker)
-        if idx >= 0:
-            yield _finding(
-                "x402.testnet", "medium", "x402 is configured for a testnet",
-                rel, text, idx, _line_at(text, idx),
-                "Testnet money is not money. A production buyer cannot settle here.",
-                "Use eip155:8453 (Base mainnet) and a mainnet facilitator before selling.",
-            )
-            return
+    pattern = re.compile(
+        r"(?i)(X402_NETWORK|network)\s*[:=]\s*[\"']?"
+        r"(eip155:84532|base[-_]?sepolia|sepolia)"
+    )
+    for m in pattern.finditer(text):
+        yield _finding(
+            "x402.testnet", "medium", "x402 is configured for a testnet",
+            rel, text, m.start(), _line_at(text, m.start()),
+            "Testnet money is not money. A production buyer cannot settle here.",
+            "Use eip155:8453 (Base mainnet) and a mainnet facilitator before selling.",
+        )
+        return
 
 
 def rule_x402_disabled(rel: str, text: str):
@@ -214,7 +222,10 @@ def _payment_code(rel: str, text: str) -> bool:
     if not is_code(rel):
         return False
     low = text.lower()
-    return any(marker in low for marker in PAYMENT_MARKERS)
+    if not any(marker in low for marker in PAYMENT_MARKERS):
+        return False
+    path = rel.lower()
+    return any(hint in path for hint in PAYMENT_PATH_HINTS)
 
 
 def rule_no_spend_limit(rel: str, text: str):
@@ -287,12 +298,20 @@ def rule_x402_no_receipt(rel: str, text: str):
 def rule_code_execution(rel: str, text: str):
     if not is_code(rel):
         return
+    ext = Path(rel).suffix.lower()
     checks = [
-        (r"\beval\s*\(", "high", "eval() on data that may come from a tool or model"),
-        (r"\bexec\s*\(", "high", "exec() on data that may come from a tool or model"),
+        (r"(?<![\w.-])\beval\s*\(", "high", "eval() on data that may come from a tool or model"),
         (r"pickle\.loads", "high", "pickle.loads on untrusted bytes"),
-        (r"shell\s*=\s*True", "medium", "subprocess with shell=True"),
     ]
+    if ext in {".js", ".jsx", ".ts", ".tsx", ".mjs", ".cjs"}:
+        # RegExp.exec() is not process execution. Only child_process is.
+        checks.append((r"\bchild_process\.exec\s*\(|\bexecSync\s*\(", "high",
+                       "child_process.exec on data that may come from a tool or model"))
+    else:
+        checks.append((r"(?<![\w.-])\bexec\s*\(", "high",
+                       "exec() on data that may come from a tool or model"))
+    if ext in {".py", ".sh", ".js", ".ts", ".mjs", ".cjs"}:
+        checks.append((r"shell\s*=\s*True", "medium", "subprocess with shell=True"))
     for pattern, severity, title in checks:
         for m in re.finditer(pattern, text):
             yield _finding(
