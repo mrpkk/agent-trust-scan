@@ -114,11 +114,11 @@
 
 ## P8 — Гигиена
 
-- [ ] Obsidian daily note после каждого шага.
-- [ ] `soma_remember` ключевых фактов.
-- [ ] Git commit + push каждого шага.
-- [ ] Локальный backup + GDrive после крупного шага.
-- [ ] Skill `agent-commerce-trust` с уроками.
+- [x] Obsidian daily note после каждого шага.
+- [x] `soma_remember` ключевых фактов.
+- [x] Git commit + push каждого шага.
+- [x] Локальный backup + GDrive после крупного шага.
+- [x] Skill `agent-commerce-trust` с уроками.
 
 ---
 
