@@ -9,6 +9,7 @@ def test_cli_exit_code_for_critical(tmp_path: Path):
         'PRIVATE_KEY = "0x' + "a" * 64 + '"\n', encoding="utf-8"
     )
     assert main([str(tmp_path), "--fail-on", "critical"]) == 1
+    assert main(["scan", str(tmp_path), "--fail-on", "critical"]) == 1
 
 
 def test_cli_exit_code_clean(tmp_path: Path):

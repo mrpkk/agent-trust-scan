@@ -36,7 +36,11 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
+    raw = list(argv) if argv is not None else sys.argv[1:]
+    # Accept both `agent-trust-scan scan PATH` (docs/action) and `agent-trust-scan PATH`.
+    if raw and raw[0] == "scan":
+        raw = raw[1:]
+    args = build_parser().parse_args(raw)
     try:
         result = scan_path(args.path, excludes=set(args.exclude))
     except FileNotFoundError as exc:
