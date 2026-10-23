@@ -148,3 +148,13 @@
 - 50 целей: `outreach/targets.csv` (локально, не публикуется)
 - 12 тестов: `python3 -m pytest -q` — зелёные.
 - CI: `.github/workflows/test.yml` (после фикса установки pytest).
+
+---
+
+## Статус 24.10.2026, вечер
+
+- v0.1.1: меньше ложных срабатываний, field notes, composite action.
+- 62 цели, 12 готовых сообщений, приоритеты.
+- CI зелёный; Pages 200; pinned issue с формой скана.
+- Бэкап: `/media/Sruti/iamthat/backups/agent-trust/agent-trust-bundle-2026-10-24_04-57.tar.gz` + `gdrive:opencode/agent-trust/`.
+- Внешние сообщения не отправлялись: нужен подтверждающий шаг владельца.
