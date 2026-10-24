@@ -99,6 +99,7 @@
     <nav class="navlinks">
       <a href="#checks">Checks</a>
       <a href="#pricing">Pricing</a>
+      <a href="#spend">Spend audit</a>
       <a href="#how">How it works</a>
       <a href="https://github.com/mrpkk/agent-trust-scan">GitHub</a>
       <a class="btn primary" href="https://github.com/mrpkk/agent-trust-scan/issues/new?template=scan-request.yml">Free scan</a>
@@ -193,6 +194,37 @@ agent-trust-scan scan ./agent
         </div>
       </div>
       <div class="micro">Retainer: $1,500/mo for monitoring, policy updates, monthly report, incident response.</div>
+    </div>
+  </section>
+
+  <section id="spend">
+    <div class="wrap">
+      <h2>Also: find the money your agent wastes.</h2>
+      <p class="sub">AI agents pay for models, tools, APIs, x402 and stablecoin services. We audit the payment path: duplicate calls, price escalation, failed-but-billed, runaway loops, wrong asset/network, refunds. Free scan of one flow.</p>
+      <div class="two">
+        <div class="panel">
+          <h3>Eight checks</h3>
+          <ul class="checks">
+            <li>Duplicate retries without idempotency</li>
+            <li>Quote vs settled price</li>
+            <li>Wrong asset, network or payee</li>
+            <li>Failed calls that still billed</li>
+            <li>Runaway loops and retries</li>
+            <li>Refund / receipt mismatch</li>
+            <li>Frontier model on simple tasks</li>
+            <li>Budget bypass in the signing path</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Pricing</h3>
+          <p><b>Free scan</b> — one flow, one week, 48h report.<br>
+          <b>Audit</b> — $2,500 fixed or 20% of verified savings.<br>
+          <b>Control retainer</b> — $1,500/mo.</p>
+          <div style="height:14px"></div>
+          <a class="btn" href="https://github.com/mrpkk/agent-trust-scan/issues/new?template=spend-scan.yml">Request a spend scan</a>
+          <a class="btn" href="https://github.com/mrpkk/agent-trust-scan/blob/main/docs/SPEND-AUDIT.md">How it works</a>
+        </div>
+      </div>
     </div>
   </section>
 

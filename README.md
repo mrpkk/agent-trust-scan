@@ -75,6 +75,12 @@ See [`docs/SAMPLE-REPORT.md`](docs/SAMPLE-REPORT.md) for a full report against a
 
 Open a [scan request](https://github.com/mrpkk/agent-trust-scan/issues/new?template=scan-request.yml) with a public repo or a short description of the payment flow. We return a 2-page report in 48 hours.
 
+## Agent spend audit
+
+AI agents pay for models, tools, APIs, x402 and stablecoin services. We audit the payment path: duplicate calls, price escalation, failed-but-billed, runaway loops, wrong asset/network, refunds.
+
+Free scan of one flow: [docs/SPEND-AUDIT.md](docs/SPEND-AUDIT.md).
+
 ## Paid review
 
 | Service | Price | What you get |
