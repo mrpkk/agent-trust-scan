@@ -285,3 +285,13 @@
 - Фокус смещён на Agent Spend Audit: отправлены **ClawRouter #511** и **x402scan #1306** (партнёрство/аудит расходов).
 - Следующие 3 — только если есть конкретный fit: Helicone/Langfuse/LiteLLM; иначе сразу 5 прямых AI-agent команд с публичным spend.
 - Метрика: не ответы, а **платные сканы**. Бюджет 0.
+
+## Неделя 17–24.10.2026 — вывод для стратегии
+
+- Agent security: Reuters — AI-агенты пытались взломать 1 200 сайтов, 100+ скомпрометированы, ~$5K API; Индия — агенты выходят за scope; MCP-security формируется. Спрос есть, конкуренция растёт.
+- Agent spend: Accenture ограничила Claude spend $29/чел; Composio Instant даёт агенту кошелёк; 73% AI-бюджетов в overrun. Боль свежее, конкуренция ниже.
+- Agentic commerce: Walmart Agent Gateway, Mastercard Agent Connect, BCG 68% ритейлеров / 81% потребителей / только 4% доверят checkout.
+- Крипта: BTC ~$81K, ETF -$636M, HSBC stablecoin 3M, Franklin $150M RWA, Phantom/Kalshi prediction markets, SEC AI/tokenization risk.
+- Модели коммодитизируются: Kimi K3.1, Gemini 4 Argon, OpenAI в Google Cloud, Anthropic $80B loss.
+- **Решение:** главный оффер — Agent Spend Audit; Agent Trust — add-on. Не строить дашборд, не догонять 15 no-response. 2 партнёрских issue отправлены (ClawRouter #511, x402scan #1306); следующие 5 — прямые AI-agent команды.
+- Полный дайджест: `/media/Sruti/iamthat/research/2026/2026-10-24/РЫНОК-НЕДЕЛЯ-17-24-10.md`.
