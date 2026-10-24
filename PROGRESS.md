@@ -165,3 +165,25 @@
 - `agent-trust-scan scan examples/vulnerable-agent --fail-on critical` → exit 1, отчёт с критическим finding. Это ожидаемое поведение.
 - CI: зелёный на `9740f41`; Pages: 200.
 - Релизы: v0.1.0, v0.1.1, v0.1.2.
+
+## Outreach 24.10.2026 — первые 9 отправок
+
+Отправлено через GitHub issues (публичные, адресные, без заявлений об уязвимостях):
+
+- Bindu — https://github.com/GetBindu/Bindu/issues/615
+- internet-court — https://github.com/internet-court/internet-court-skill/issues/37
+- Daydreams — https://github.com/daydreamsai/daydreams/issues/708
+- Goncafer47 Stablecoin Payment Gateway — https://github.com/Goncafer47/Stablecoin-Payment-Gateway/issues/3
+- OneShot SDK — https://github.com/oneshot-agent/sdk/issues/7
+- Grantex — https://github.com/mishrasanjeev/grantex/issues/1861
+- BlindPay MCP — https://github.com/blindpaylabs/blindpay-mcp/issues/42
+- Talyvor Lens — https://github.com/Talyvor/talyvor-lens/issues/865
+- BlockRun MCP — https://github.com/BlockRunAI/blockrun-mcp/issues/195
+
+**Блокеры каналов:**
+- Gmail SMTP/IMAP: `GMAIL_PAS` недействителен (Authentication failed); Gmail web-сессия из cookie-моста уходит в account chooser. Письма не отправлены.
+- GitHub API: fine-grained token не имеет `issues:write` на чужие репозитории (403); classic token истёк. Issues отправлены через web-сессию в xvfb.
+- worldliberty/agentpay-sdk и usewhisk/whisk: только шаблоны bug/feature/security, нет blank issue; не использовал шаблон не по назначению.
+- Claw402: нет публичного email/issue-канала.
+
+**Следующий шаг:** follow-up 27.10.2026 по тем же issue; ответить на комментарии; если тишина — 20 новых целей.
