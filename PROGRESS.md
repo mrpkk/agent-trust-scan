@@ -197,3 +197,9 @@
 - Envelope `351419fd3d7d4111` «Agent Trust: first revenue» взят в работу (`soma_claim`, indra).
 - Ответов: **0**. Email-канал по-прежнему закрыт (`GMAIL_PAS` invalid).
 - Следующее: мониторить ответы, follow-up 27.10, при тишине — 20 новых целей.
+
+## Batch 02 — готов, не отправлен
+
+- `outreach/BATCH-02.md`: 14 следующих целей (Franklin, Agent-Layer, affinidi, mnemopay, strale, sanction, agentwallet-mcp, agent-wallet-mcp, nirium, DeepFirst, meterkit, SublyFi, 16ane, x402scan).
+- Отправлять только после follow-up 27.10 и только 5 самых подходящих.
+- Правило: без заявлений об уязвимостях; только конкретный контроль (лимит, receipt, replay, kill switch).
