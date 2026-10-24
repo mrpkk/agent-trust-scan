@@ -9,6 +9,10 @@ AI agents now pay for models, tools, APIs, x402 calls and stablecoin services. T
 - Only **26%** see AI costs fully and in real time.
 - Agentic commerce already has a named failure class: **overcharge, duplicate billing, structuring, warm-up fraud** (arXiv, 2026).
 
+## Not another dashboard
+
+AI FinOps and LLM observability tools show what you spent. They do not prove the charge was correct, and they do not recover the difference. This audit is independent of the router, the model vendor, and the payment processor. We get paid only when the finding is verified.
+
 ## Eight checks
 
 1. **Duplicate calls** — retries without idempotency; the same request billed twice.

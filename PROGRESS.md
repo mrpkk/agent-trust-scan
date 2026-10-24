@@ -269,3 +269,12 @@
 - Цены: free scan / $2 500 или 20% verified savings / $1 500 retainer.
 - 10 целей: `outreach/FINOPS-TARGETS.md`; первые 5 — после ревью, не отправлены.
 - Бюджет: **0**. Всё на GitHub Pages/бесплатных каналах.
+
+### P6.1 — проверка конкурентов (24.10.2026)
+
+- Прямого аналога «независимый аудит агентских платежей + success fee» не найдено.
+- Соседние: AI FinOps (Vantage, CloudZero, Amnic, Finout, CloudQuell) — показывают spend, не проверяют correctness; LLM observability (Langfuse, Helicone, LiteLLM) — трейсы/токены, не recovery; crypto AP (Bitwave, Request Finance, Cryptio) — учёт/платежи, не audit overcharge; x402 analytics (x402scan, Kertivo, Agent402) — объём/trust, не расход покупателя.
+- Позиционирование: «Дашборд показывает, сколько потратили. Мы проверяем, за что именно списали — и возвращаем переплату».
+- Угроза: FinOps/x402-платформы могут добавить audit; защита — cross-rail, независимость, success fee, recovery.
+- Полный разбор: `/media/Sruti/iamthat/research/2026/2026-10-24/AGENT-SPEND-AUDIT-КОНКУРЕНТЫ.md`.
+- Следующее: 5 FinOps-целей (не 10), free scan, только письменно.
