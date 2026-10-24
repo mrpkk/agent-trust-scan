@@ -166,7 +166,7 @@
 - CI: зелёный на `9740f41`; Pages: 200.
 - Релизы: v0.1.0, v0.1.1, v0.1.2.
 
-## Outreach 24.10.2026 — первые 9 отправок
+## Outreach 24.10.2026 — первые 11 отправок
 
 Отправлено через GitHub issues (публичные, адресные, без заявлений об уязвимостях):
 
@@ -179,11 +179,13 @@
 - BlindPay MCP — https://github.com/blindpaylabs/blindpay-mcp/issues/42
 - Talyvor Lens — https://github.com/Talyvor/talyvor-lens/issues/865
 - BlockRun MCP — https://github.com/BlockRunAI/blockrun-mcp/issues/195
+- Claw402 Open — https://github.com/NoFxAiOS/claw402-open/issues/26
+- Whisk Discussion — https://github.com/usewhisk/whisk/discussions/174
 
 **Блокеры каналов:**
 - Gmail SMTP/IMAP: `GMAIL_PAS` недействителен (Authentication failed); Gmail web-сессия из cookie-моста уходит в account chooser. Письма не отправлены.
 - GitHub API: fine-grained token не имеет `issues:write` на чужие репозитории (403); classic token истёк. Issues отправлены через web-сессию в xvfb.
-- worldliberty/agentpay-sdk и usewhisk/whisk: только шаблоны bug/feature/security, нет blank issue; не использовал шаблон не по назначению.
-- Claw402: нет публичного email/issue-канала.
+- worldliberty/agentpay-sdk: только шаблоны bug/feature/security/ecosystem; для вопроса о security нет подходящего шаблона, не использовал не по назначению.
+- Email-канал остаётся закрытым: `GMAIL_PAS` недействителен.
 
 **Следующий шаг:** follow-up 27.10.2026 по тем же issue; ответить на комментарии; если тишина — 20 новых целей.
