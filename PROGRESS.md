@@ -216,3 +216,11 @@
 - `outreach/BATCH-02.md`: 14 следующих целей (Franklin, Agent-Layer, affinidi, mnemopay, strale, sanction, agentwallet-mcp, agent-wallet-mcp, nirium, DeepFirst, meterkit, SublyFi, 16ane, x402scan).
 - Отправлять только после follow-up 27.10 и только 5 самых подходящих.
 - Правило: без заявлений об уязвимостях; только конкретный контроль (лимит, receipt, replay, kill switch).
+
+## P6 — closing kit (24.10.2026)
+
+- `outreach/SOW-TEMPLATE.md` — письменный scope, 50% предоплата, retest, no custody, no calls.
+- `outreach/INVOICE-TEMPLATE.md` — USDC Base/Solana, tx-hash verification, no static address.
+- `outreach/preflight/` — сканы 5 целей (Agent-Layer, Affinidi, DeepFirst, AgentWallet, Claw402). **Не публиковать и не заявлять как уязвимости**; это подготовка к ответу.
+- `outreach/SCOPE-QUESTIONS.md` — 10 письменных вопросов вместо звонка.
+- Правило: все публичные утверждения проверяемы; если находка не подтверждена — не заявляем.
