@@ -304,3 +304,13 @@
 - RWA-вход для соло: **attestation / proof-of-reserve / NAV reporting**, не эмиссия. Стейблкоины: payment ops/reconciliation. Prediction markets: resolution evidence/data, не маркет-мейкинг.
 - Карты: USDC-инвойс + card on-ramp (Transak/Banxa/Guardarian) по запросу; Paddle/Lemon Squeezy блокируют РФ; MoR/Stripe — после non-RF юрлица и выручки.
 - 30-дневный план мостов: `research/2026/2026-10-24/ТЕХНОРАДАР-МОСТЫ-2026.md`.
+
+## P6.3 — Nidhipati (рабочее имя, 24.10.2026)
+
+- Рынок: 112 agent-payment стартапов (Dealroom), Skyfire/Nevermined/Payman/Coinbase x402/Mastercard Agent Pay/Visa; FinOps/observability — отдельные point solutions. Прямого независимого audit/receipt-слоя нет.
+- Решение: не строить ещё один OS/рельс. **Nidhipati** = Proof + Spend + Guard + Reserve + Resolve + Reconcile; запускать по модулям.
+- Имя: Nidhipati («владыка сокровищ», эпитет Куберы). Предварительно: `nidhipati.com` — whois no match, `.io` — RDAP 404, npm/PyPI — 404. Это не юридическая проверка; домен не покупаем до выручки.
+- Attest апгрейдится, но одного апгрейда мало: нужны validator, данные, отчёты, партнёры. Код — 20%, доверие/данные — 80%.
+- RWA для соло: proof-of-reserve/NAV, не эмиссия. Стейблкоины: reconcile/invoice/ops, не эмиссия. Prediction: resolution evidence/data, не MM.
+- Первый код: **Nidhipati Proof validator** (1–2 недели, 10 тестов), затем Spend audit CLI.
+- Полный бриф: `/media/Sruti/iamthat/research/2026/2026-10-24/NIDHIPATI-ПРОДУКТ.md`.
