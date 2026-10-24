@@ -161,7 +161,7 @@
 
 ## Проверка публичного артефакта
 
-- `git clone` с GitHub → `pip install -e .` → `pytest` — 13 тестов зелёные.
+- `git clone` с GitHub → `pip install -e .` → `pytest` — 12 тестов зелёные.
 - `agent-trust-scan scan examples/vulnerable-agent --fail-on critical` → exit 1, отчёт с критическим finding. Это ожидаемое поведение.
 - CI: зелёный на `9740f41`; Pages: 200.
 - Релизы: v0.1.0, v0.1.1, v0.1.2.
