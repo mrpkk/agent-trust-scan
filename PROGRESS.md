@@ -295,3 +295,12 @@
 - Модели коммодитизируются: Kimi K3.1, Gemini 4 Argon, OpenAI в Google Cloud, Anthropic $80B loss.
 - **Решение:** главный оффер — Agent Spend Audit; Agent Trust — add-on. Не строить дашборд, не догонять 15 no-response. 2 партнёрских issue отправлены (ClawRouter #511, x402scan #1306); следующие 5 — прямые AI-agent команды.
 - Полный дайджест: `/media/Sruti/iamthat/research/2026/2026-10-24/РЫНОК-НЕДЕЛЯ-17-24-10.md`.
+
+## P6.2 — Proof of Spend и мосты (24.10.2026)
+
+- Опубликован **Proof of Spend v0.1**: `docs/PROOF-OF-SPEND.md`, JSON Schema `docs/proof-of-spend.schema.json`, пример `docs/proof-of-spend.example.json`.
+- Лендинг: секция `#proof` — подписанный receipt для агентского платежа (mandate, amount, asset, network, payee, tx hash, usage, refund, verdict).
+- Уникальность: cross-rail receipt, которого нет у FinOps/x402scan/shim-cli; не дашборд, не токен, не кастоди.
+- RWA-вход для соло: **attestation / proof-of-reserve / NAV reporting**, не эмиссия. Стейблкоины: payment ops/reconciliation. Prediction markets: resolution evidence/data, не маркет-мейкинг.
+- Карты: USDC-инвойс + card on-ramp (Transak/Banxa/Guardarian) по запросу; Paddle/Lemon Squeezy блокируют РФ; MoR/Stripe — после non-RF юрлица и выручки.
+- 30-дневный план мостов: `research/2026/2026-10-24/ТЕХНОРАДАР-МОСТЫ-2026.md`.

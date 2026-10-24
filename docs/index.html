@@ -100,6 +100,7 @@
       <a href="#checks">Checks</a>
       <a href="#pricing">Pricing</a>
       <a href="#spend">Spend audit</a>
+      <a href="#proof">Proof of Spend</a>
       <a href="#how">How it works</a>
       <a href="https://github.com/mrpkk/agent-trust-scan">GitHub</a>
       <a class="btn primary" href="https://github.com/mrpkk/agent-trust-scan/issues/new?template=scan-request.yml">Free scan</a>
@@ -223,6 +224,35 @@ agent-trust-scan scan ./agent
           <div style="height:14px"></div>
           <a class="btn" href="https://github.com/mrpkk/agent-trust-scan/issues/new?template=spend-scan.yml">Request a spend scan</a>
           <a class="btn" href="https://github.com/mrpkk/agent-trust-scan/blob/main/docs/SPEND-AUDIT.md">How it works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="wrap">
+      <h2>Proof of Spend: a receipt the other side can verify.</h2>
+      <p class="sub">A signed JSON receipt for an agent payment: who acted, what was authorized, what was actually paid, what was used and refunded. Not a token, not custody — a portable evidence trail for merchants, wallets, buyers and auditors.</p>
+      <div class="two">
+        <div class="panel">
+          <h3>What it answers</h3>
+          <ul class="checks">
+            <li>Which agent and key signed</li>
+            <li>Which mandate and policy applied</li>
+            <li>Amount, asset, network, payee</li>
+            <li>Tx hash and settlement time</li>
+            <li>Usage and unit price</li>
+            <li>Refund and remaining amount</li>
+            <li>Policy verdict and reasons</li>
+            <li>Replay / receipt ID</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Draft v0.1</h3>
+          <p>Open spec, JSON Schema and example. Built for x402/USDC first, rail-agnostic by design. No custody, no token.</p>
+          <div style="height:14px"></div>
+          <a class="btn" href="https://github.com/mrpkk/agent-trust-scan/blob/main/docs/PROOF-OF-SPEND.md">Read the spec</a>
+          <a class="btn" href="https://github.com/mrpkk/agent-trust-scan/blob/main/docs/proof-of-spend.schema.json">JSON Schema</a>
         </div>
       </div>
     </div>

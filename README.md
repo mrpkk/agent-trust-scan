@@ -81,6 +81,8 @@ AI agents pay for models, tools, APIs, x402 and stablecoin services. We audit th
 
 Free scan of one flow: [docs/SPEND-AUDIT.md](docs/SPEND-AUDIT.md).
 
+**Proof of Spend (draft v0.1):** [docs/PROOF-OF-SPEND.md](docs/PROOF-OF-SPEND.md) — a signed receipt for an agent payment: mandate, amount, asset, network, payee, tx hash, usage, refund. JSON Schema: [docs/proof-of-spend.schema.json](docs/proof-of-spend.schema.json).
+
 ## Paid review
 
 | Service | Price | What you get |
