@@ -261,3 +261,11 @@
 - Free scan: публичные tx/логи, без платных API.
 - Если нужен ASR/платный API — только как pass-through в счёте клиента, после предоплаты.
 - Никаких VPS/рекламы/каталогов до первого платежа.
+
+### P6.1 — оффер опубликован
+
+- Страница: https://mrpkk.github.io/agent-trust-scan/#spend
+- Документ: `docs/SPEND-AUDIT.md`; форма: `.github/ISSUE_TEMPLATE/spend-scan.yml`.
+- Цены: free scan / $2 500 или 20% verified savings / $1 500 retainer.
+- 10 целей: `outreach/FINOPS-TARGETS.md`; первые 5 — после ревью, не отправлены.
+- Бюджет: **0**. Всё на GitHub Pages/бесплатных каналах.
