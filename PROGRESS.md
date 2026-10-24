@@ -12,6 +12,14 @@
 Шаг не закрывается, пока нет зелёного теста и публичного артефакта.  
 Максимальная длина шага: делать всё, что не требует разрешения владельца, и не останавливаться на «план».
 
+## Правило коммуникации (24.10.2026)
+
+- **Никаких звонков и видео.** Только письменно: GitHub issue/discussion, email, Telegram-текст.
+- Квалификация — письменная: `outreach/SCOPE-QUESTIONS.md`.
+- Если клиент сам настаивает на звонке — только в крайнем случае, после письменного scope; решение владельца.
+- Владелец не будет врать. Значит: никаких выдуманных кейсов, отзывов, клиентов, сертификатов, «100% безопасности» и ложной срочности.
+- Сканер — эвристика; отчёт честно пишет, чего он не проверял. Если находок нет — так и говорим.
+
 ---
 
 ## P0 — Аудит и стратегия (закрыт)
@@ -84,7 +92,7 @@
 
 - [x] 3 сообщения: x402-продавец, AI-агент стартап, DAO/фонд.
 - [x] Follow-up через 3 и 7 дней.
-- [x] Скрипт звонка 6 вопросов.
+- [x] Письменная квалификация: 6 вопросов, без звонков.
 - [x] Таблица статусов: sent/replied/scan/paid.
 - [x] Правило: 20–30 адресных сообщений/день, без спама, только публичные каналы.
 
@@ -166,7 +174,7 @@
 - CI: зелёный на `9740f41`; Pages: 200.
 - Релизы: v0.1.0, v0.1.1, v0.1.2.
 
-## Outreach 24.10.2026 — первые 11 отправок
+## Outreach 24.10.2026 — первые 15 отправок
 
 Отправлено через GitHub issues (публичные, адресные, без заявлений об уязвимостях):
 
@@ -181,18 +189,23 @@
 - BlockRun MCP — https://github.com/BlockRunAI/blockrun-mcp/issues/195
 - Claw402 Open — https://github.com/NoFxAiOS/claw402-open/issues/26
 - Whisk Discussion — https://github.com/usewhisk/whisk/discussions/174
+- Agent-Layer — https://github.com/lopushok9/Agent-Layer/issues/37
+- Affinidi Agent Gateway — https://github.com/affinidi-ai/agent-gateway/issues/102
+- DeepFirst — https://github.com/DeepFirstHQ/deepfirstsearch/issues/73
+- AgentWallet MCP — https://github.com/hifriendbot/agentwallet-mcp/issues/22
 
 **Блокеры каналов:**
 - Gmail SMTP/IMAP: `GMAIL_PAS` недействителен (Authentication failed); Gmail web-сессия из cookie-моста уходит в account chooser. Письма не отправлены.
 - GitHub API: fine-grained token не имеет `issues:write` на чужие репозитории (403); classic token истёк. Issues отправлены через web-сессию в xvfb.
 - worldliberty/agentpay-sdk: только шаблоны bug/feature/security/ecosystem; для вопроса о security нет подходящего шаблона, не использовал не по назначению.
+- JuanTorchia/meterkit: только шаблоны issue; нет blank issue, не использовал не по назначению.
 - Email-канал остаётся закрытым: `GMAIL_PAS` недействителен.
 
-**Следующий шаг:** follow-up 27.10.2026 по тем же issue; ответить на комментарии; если тишина — 20 новых целей.
+**Следующий шаг:** follow-up 27.10.2026 по тем же тредам; ответить на комментарии; если тишина — 5 целей из Batch 02.
 
 ## Статус P6 на 24.10.2026, 06:10
 
-- Отправлено **11** адресных сообщений: 9 issues + Claw402 issue #26 + Whisk discussion #174.
+- Отправлено **15** адресных сообщений: 14 GitHub issues + 1 Whisk discussion.
 - Подготовлен follow-up на 27.10: `outreach/FOLLOWUP-01.md`.
 - Envelope `351419fd3d7d4111` «Agent Trust: first revenue» взят в работу (`soma_claim`, indra).
 - Ответов: **0**. Email-канал по-прежнему закрыт (`GMAIL_PAS` invalid).
