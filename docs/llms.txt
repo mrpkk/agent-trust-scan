@@ -36,3 +36,8 @@ Do not paste private keys, seed phrases, or customer data.
 
 Static scan is heuristic; it does not execute the agent or prove exploitability.
 A paid review adds live tests and a threat model. It is not a guarantee.
+
+## Payment proxy checklist
+
+10 checks before an agent moves money:
+https://github.com/mrpkk/agent-trust-scan/blob/main/docs/PAYMENT-PROXY-CHECKLIST.md
