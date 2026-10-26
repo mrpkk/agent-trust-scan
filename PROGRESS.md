@@ -338,3 +338,13 @@
   agent-side проверки advisory после prompt injection; signed receipt.
 - **Статус:** warm, pre-launch; «reconnect closer to launch». Не лид, не оплата.
 - **Трекер:** `outreach/targets.csv` → `replied`.
+
+## 26.10.2026 — payment proxy checklist
+
+- `docs/PAYMENT-PROXY-CHECKLIST.md`: 10 checks for a gateway/proxy that moves agent
+  money (mandate per action, payee/cap, expiry/audience/nonce, idempotency,
+  failed-but-billed, receipt binding, human exceptions, kill switch, evidence,
+  reconciliation).
+- Написан по ответу Affinidi: они спросили, где чаще gap и что держать в прокси,
+  а что в агенте. Раздел «Where to enforce» — прокси, agent-side advisory.
+- Ссылка: https://github.com/mrpkk/agent-trust-scan/blob/main/docs/PAYMENT-PROXY-CHECKLIST.md
