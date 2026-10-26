@@ -326,3 +326,15 @@
   - LiteLLM (BerriAI) `ishaan@berri.ai` — аудит после прокси, вопрос об интеграции.
   - Langfuse `contact@langfuse.com` (официальный imprint) — аудит рядом с трейсами.
 - **Ответов: 0.** Бюджет: 0. Следующий шаг — только ответ или новый проверенный адрес.
+
+## 26.10.2026 — Affinidi ответил: тёплый контакт, не лид
+
+- `obradovicaffinidi` ответил в `affinidi-ai/agent-gateway#102`: identity и payment
+  authorization — отдельные проверки; платёж оценивается на каждом действии.
+  Спросил, где чаще gap: лимиты, mandate на прокси, audience/expiry, или другое;
+  и где команды это держат — в прокси или в агенте.
+- **Ответ отправлен** (GitHub): 5 типовых gap (mandate разово, лимиты в промпте,
+  expiry/audience, failed-but-billed, нет receipt); enforce — на прокси, потому что
+  agent-side проверки advisory после prompt injection; signed receipt.
+- **Статус:** warm, pre-launch; «reconnect closer to launch». Не лид, не оплата.
+- **Трекер:** `outreach/targets.csv` → `replied`.
