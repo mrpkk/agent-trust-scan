@@ -314,3 +314,15 @@
 - RWA для соло: proof-of-reserve/NAV, не эмиссия. Стейблкоины: reconcile/invoice/ops, не эмиссия. Prediction: resolution evidence/data, не MM.
 - Первый код: **Nidhipati Proof validator** (1–2 недели, 10 тестов), затем Spend audit CLI.
 - Полный бриф: `/media/Sruti/iamthat/research/2026/2026-10-24/NIDHIPATI-ПРОДУКТ.md`.
+
+## 26.10.2026 — follow-up 27.10 отменён, FinOps-письма отправлены
+
+- **Отмена:** 9 GitHub issues (Bindu #615, internet-court #37, Daydreams #708,
+  Goncafer47 #3, OneShot #7, Grantex #1861, BlindPay #42, Talyvor #865,
+  BlockRun #195) — 15 обращений, **0 ответов**. Follow-up 27.10 отменён, чтобы
+  не спамить. Задача в хабе закрыта с этой причиной.
+- **Вместо этого:** 2 письма FinOps/observability-партнёрам с конкретным fit:
+  - Helicone `enterprise@helicone.ai` — аудит расходов рядом с observability.
+  - LiteLLM (BerriAI) `ishaan@berri.ai` — аудит после прокси, вопрос об интеграции.
+  - Langfuse — публичного email нет; не отправлял.
+- **Ответов: 0.** Бюджет: 0. Следующий шаг — только ответ или новый проверенный адрес.
