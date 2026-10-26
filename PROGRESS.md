@@ -324,5 +324,5 @@
 - **Вместо этого:** 2 письма FinOps/observability-партнёрам с конкретным fit:
   - Helicone `enterprise@helicone.ai` — аудит расходов рядом с observability.
   - LiteLLM (BerriAI) `ishaan@berri.ai` — аудит после прокси, вопрос об интеграции.
-  - Langfuse — публичного email нет; не отправлял.
+  - Langfuse `contact@langfuse.com` (официальный imprint) — аудит рядом с трейсами.
 - **Ответов: 0.** Бюджет: 0. Следующий шаг — только ответ или новый проверенный адрес.
