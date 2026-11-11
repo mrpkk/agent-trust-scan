@@ -41,11 +41,13 @@ AI FinOps and LLM observability tools show what you spent. They do not prove the
 | Service | Price |
 |---|---|
 | Free Agent Spend Scan (one flow, one week) | **0** |
-| Audit | **$2,500** fixed, or **20% of verified savings** for 6 months |
+| Agent Spend Audit (one month of logs, five working days) | **$500** flat, USDC on Base |
 | Control retainer | **$1,500/mo** |
-| Security add-on (wallet/payment review) | **$2,500** |
+| Agent Wallet Security Review (threat model, live prompt-injection tests, retest) | **$2,500** |
 
-No calls. Written scope and written report.
+No calls. Written scope and written report. The audit price is $500 flat: the fee is for
+the audit, not for a recovery outcome. If the records show no leaks, the report says so
+and there is no fee for finding nothing.
 
 ## Illustrative example (synthetic, not a client)
 

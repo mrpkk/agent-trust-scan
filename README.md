@@ -87,6 +87,7 @@ Free scan of one flow: [docs/SPEND-AUDIT.md](docs/SPEND-AUDIT.md).
 
 | Service | Price | What you get |
 |---|---|---|
+| Agent Spend Audit | $500 | one month of logs, five working days: duplicates, escalation, failed-but-billed, refunds, fix order |
 | Agent Wallet Security Review | $2,500 | threat model, prompt-injection tests, wallet permissions, limits, kill switch, x402 flow, report + fixes |
 | Payable Agent Sprint | $3,500 | USDC/x402 pay-per-call, cost-based pricing, receipt check, docs, deploy on your infra |
 | Payable + Safe | $5,500 | both, plus 30 days of support |
