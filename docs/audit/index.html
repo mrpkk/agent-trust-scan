@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Spend Audit — $500, 5 days</title>
+<meta name="description" content="A 5-day audit of one month of your AI agent logs: duplicate calls, failed-but-billed requests, quote-vs-settled differences, missing refunds. $500 in USDC, no account needed.">
+<link rel="canonical" href="https://rta.lat/audit/">
+<style>
+ body{margin:0;background:#0d1117;color:#e6edf3;font:16px/1.6 -apple-system,Segoe UI,Roboto,sans-serif}
+ main{max-width:820px;margin:0 auto;padding:44px 20px 80px}
+ h1{font-size:32px;line-height:1.2;margin:0 0 10px} h2{font-size:19px;margin:30px 0 8px}
+ p,li{color:#c9d1d9} a{color:#d4a24e}
+ ul{padding-left:20px} li{margin:6px 0}
+ .price{display:inline-block;border:1px solid #30363d;border-radius:12px;padding:14px 18px;margin:18px 0;background:#11161d}
+ .price b{font-size:26px;color:#e6edf3}
+ .pay{border:1px solid #30363d;border-radius:12px;padding:18px;background:#11161d;margin:18px 0}
+ .addr{font:14px/1.5 ui-monospace,Menlo,monospace;word-break:break-all;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:10px}
+ button{margin-top:10px;padding:9px 16px;border:0;border-radius:8px;background:#d4a24e;color:#0d1117;font-weight:600;cursor:pointer}
+ .meta{color:#8b949e;font-size:13px}
+ .cta{display:inline-block;margin-top:18px;padding:12px 20px;border-radius:10px;background:#d4a24e;color:#0d1117;font-weight:700;text-decoration:none}
+</style></head><body><main>
+<h1>Agent Spend Audit</h1>
+<p>One month of your agent logs, five working days, one report: where the money leaks and in what order to fix it.
+No card, no account, no subscription.</p>
+
+<div class="price"><b>$500</b> · USDC on Base · 5 working days</div>
+
+<h2>What we check in the logs</h2>
+<ul>
+<li><b>Duplicate calls and retries</b> — the same request paid twice: loops, retries replaying context, fan-out copying one prompt.</li>
+<li><b>Failed but billed</b> — errors after the payment settled.</li>
+<li><b>Quote vs settled</b> — what the provider quoted and what actually left the wallet.</li>
+<li><b>Missing refunds</b> — reversals that never arrived.</li>
+<li><b>No per-task attribution</b> — spend you cannot assign to a task, and why.</li>
+</ul>
+
+<h2>What you get</h2>
+<ul>
+<li>a report naming each leak, with the line or pattern it came from;</li>
+<li>the fix order: first the leak with the largest recoverable amount;</li>
+<li>a spend-limit configuration you can apply the same week;</li>
+<li>if the logs show no leaks, the report says so — we do not invent findings.</li>
+</ul>
+
+<h2>How to pay</h2>
+<div class="pay">
+<p><a class="cta" href="https://nidhipati.rta.lat/pay/checkout?product=agent-spend-audit" style="display:inline-block;margin:0 0 12px">Pay $500 — verified on-chain</a></p>
+<p>Send exactly <b>500 USDC</b> on <b>Base</b> to:</p>
+<p class="addr" id="addr">0xefCD6886f73064ea9EcbaA4741Ef1309A0885C59</p>
+<button onclick="navigator.clipboard.writeText(document.getElementById('addr').textContent);this.textContent='Address copied'">Pay $500 in USDC</button>
+<a href="mailto:maxim.pkk@gmail.com?subject=Agent%20Spend%20Audit%20-%20payment" style="margin-left:10px;color:#d4a24e">Send tx hash</a>
+<p class="meta">Fastest: open the <a href="https://nidhipati.rta.lat/pay/checkout?product=agent-spend-audit">checkout</a> — it creates the order, shows the address and amount, checks your transfer in the
+blockchain and issues the receipt. The intake form (log export, provider list, period) arrives by email in the same step.</p>
+<p class="meta">Without the checkout: email the transaction hash to <a href="mailto:maxim.pkk@gmail.com?subject=Agent%20Spend%20Audit%20-%20payment">maxim.pkk@gmail.com</a> with the subject “Agent Spend Audit”. We reply within one business day with the same intake form.</p>
+</div>
+
+<h2>Why us</h2>
+<p>We scanned 2,500 public MCP servers: 72 touch money, none documents a spend limit. The audit uses the same
+checklist we apply to agent payments — and the same evidence standard: every finding points to the line it came from.</p>
+<p><a href="https://karta.rta.lat/report">Method and data → karta.rta.lat/report</a></p>
+
+<a class="cta" href="mailto:maxim.pkk@gmail.com?subject=Agent%20Spend%20Audit%20-%20question">Ask a question first</a>
+
+<p class="meta">The audit is a paid analysis, not legal or financial advice. Logs are handled under a short written
+agreement; delete request honoured after the report is delivered.</p>
+</main></body></html>
