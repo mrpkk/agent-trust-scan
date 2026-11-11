@@ -348,3 +348,9 @@
 - Написан по ответу Affinidi: они спросили, где чаще gap и что держать в прокси,
   а что в агенте. Раздел «Where to enforce» — прокси, agent-side advisory.
 - Ссылка: https://github.com/mrpkk/agent-trust-scan/blob/main/docs/PAYMENT-PROXY-CHECKLIST.md
+
+## Цены приведены к решению владельца (12.11.2026)
+- [x] **Противоречие найдено и исправлено:** аудит расходов стоил **$500** на живых офферах (`rta.lat/audit`, `attest.rta.lat/plans`, `nidhipati/docs/*`) и **$2 500** на публичных страницах этого репозитория и в `nidhipati/docs/OFFER.md` + `PRICING-2026-10-26.md`. Решение владельца от 28.10 — $500 плоско; в эти файлы оно не было проведено. Плюс расхождение по сроку: «ten working days» на attest против «5 working days» на остальных.
+- [x] `docs/SPEND-AUDIT.md` и `docs/index.html`: аудит — $500, пять рабочих дней, месяц логов; `README.md` — добавлена строка аудита в прайс. Success fee «20% подтверждённой экономии» убран: он противоречил «нет платы за то, что ничего не найдено» и ломал плоскую цену.
+- [x] Публичная страница ведёт в живой чек: `https://nidhipati.rta.lat/pay/checkout?product=agent-spend-audit`.
+- [x] **$2 500 не тронут** — это Agent Wallet Security Review (другой продукт: threat model, живые prompt-injection тесты, ретест). Аналогично $250/$1 250 в nidhipati/pricing — это Reserve review и Enterprise, не аудит.
